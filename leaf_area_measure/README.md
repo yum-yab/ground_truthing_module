@@ -19,7 +19,7 @@ First task is to reduce images to the essence, I used gimp for this with the fol
 
 ```bash
 git clone https://github.com/yum-yab/ground_truthing_module
-cd leaf_area_measure
+cd ground_truthing_module/leaf_area_measure
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
