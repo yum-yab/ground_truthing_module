@@ -57,7 +57,7 @@ def calculate_area_relation_of_mask(mask: np.ndarray) -> float:
 class LeafAreaMeasurer:
 
     def __init__(self, saturation_threshold: float = 0.2, skipcolors: List = [ALPHA_VALUE_HSV], max_skipping_distance: float = 0.1) -> None:
-        """Class for calculating the Area of images. 
+        """Class for calculating the Area of leaf images. 
         saturation_threshold: Is the threshold at which something is not considered a 'leaf' anymore
         skipcolors: List of hsv colors (as triple) which are not part of the area (e.g. the alpha channel)
         max_skipping_distance: Is the distance a pixel can be away from the skipping color to be considered skipping"""
