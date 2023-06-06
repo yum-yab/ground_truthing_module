@@ -111,6 +111,9 @@ Table in landscape format (uncomment if needed)
 
 # Task 4: Leaf area measurement
 
+In the next step, we determined the mass per leaf area. We took the sheets out of the paper bag and placed them one by one into the sheet scanner. We had to make sure that the sheets were fully spread out, did not overlap, and were within the measurement range area. For some sheets, the scanner was not large enough to measure all 10 sheets at once. So we did multiple scans and added up and documented the measured leaf area for each species.  
+
+To check the correctness of the scanner we performed a second type of leaf surface measurement. For this, we placed the leaves on a DinA4 sheet and took a photo. We wrote a small script to convert the scans of sheets and paper into black and white images and calculate the cumulative sheet area from the proportion of black pixels of the total paper area. Then we compared the measured area with the result of the sheet scanner. They were very similar everywhere with slight variations (see documentation).  
 There were two different approaches for measuring the leaf area: Using a specific tool or calculating it on the base of photos of the leafs on standardised A4 paper sheets
 
 ## Photo-based approach 
@@ -138,6 +141,10 @@ Here we will only describe the main ideas of the process.
 In general we know the area 
 
 First of all we hardcoded some values: The **A4 area** for reference, 
+
+## LMA
+
+To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
 
 # Woody vegetation sampling
 
