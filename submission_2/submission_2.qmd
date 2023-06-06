@@ -138,66 +138,13 @@ The goal of this step is to reduce the image to the necessary parts, mainly cutt
 
 The code and the description how to use it can be found in [this git repository](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/). 
 Here we will only describe the main ideas of the process. 
-In general we know the area 
+In general we know the area of the A4 paper, so we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` and therefor we can calculate the area of the leaf. 
+Unfortunately shadows of not fully flat leaves can add a lot of noise to the trivial approach (converting it to greyscale and cutting at a certain threshold). 
+To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, HSV and original image was implemented to find a fitting value) and generate the bitmask in this way.
+The transparent parts are not considered during the area calculation, only the white (paper), grey (shadows, counted as paper) and green (leaf) pixels.
 
-First of all we hardcoded some values: The **A4 area** for reference, 
 
 ## LMA
 
 To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
 
-# Woody vegetation sampling
-
-## Procedure
-
-Date: 16.05.2023
-
-Group-ID: 4
-
-Participants: Dennis, Fabian, Louis, Lukas, Marie-Louise, Maxwell 
-
-Coordinates: 51.332222, 12.384167
-
-Material used: 
-
-- Quadrant
-- Tape (for distance and diameter measurements)
-- Smartphone (GPS + tree species determination)
-- Survey sheet
-
-Woody vegetation was surveyed using the 'point centered quarter method' (PCQM) on May 16th, 2023. This method is used to estimate plant abundance by placing a cross at a random location and assessing tree traits of the nearest tree in each quadrant. The data also serve as ground truthing data for 5x5 meter satellite images and are intended to represent species composition of the tree layer in described park area. 
-For this purpose we selected again a random point by throwing a pile in the air and noted down the metadata, i.e. date and coordinates in LatLong/WGS84 format using a smartphone. No explicit photos of the recorded location nor trees were taken.
-In order to record the tree layer using the PCQM, we identified the nearest tree in each quadrant using a tape for the distance measure and knowledge as well as the software 'FloraIncognita' to determine the species. The nearest species were named Acer platanoides, Acer pseudoplatanus, Cornus sanguinea and Quercus robur. For each tree, the distance from the determined center location and the girth at breast height (~130cm) [cm] were measured with a tape. The diameter at breast height [cm] was then calculated with $\frac{girth [cm]}{\pi}$. Based on the diameter, the basal area [$\text{cm}^2$] was calculated with the formula $\pi \text{r}^2$, with $r = \frac{diameter [cm]}{2} [cm]$.
-Afterwards, the recorded data as well as the metadata were entered in a GoogleDocs sheet, which can be see in Table 2.1.
-
-
-{{< pagebreak >}}
-
-## Recorded species table
-
-\begin{table}[h!]
-\fontsize{32}{\baselineskip}\selectfont
-\renewcommand{\arraystretch}{8}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-\textbf{Group-ID} &
-  \textbf{Plot-ID} &
-  \textbf{Tree-ID} &
-  \textbf{Date} &
-  \textbf{\begin{tabular}[c]{@{}l@{}}X-Coordinate\\ center\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}l@{}}Y-Coordinate\\ center\end{tabular}} &
-  \textbf{Species} &
-  \textbf{Distance} &
-  \textbf{Girth (cm)} &
-  \textbf{DBH / cm} &
-  \textbf{BA / cm²} &
-  \textbf{total BA / cm²} \\ \hline
-4 & 1 & 1 & 16.05.2023 & 51.332222 & 12.384167 & Acer platanoides    & 9.8  & 239 & 76.08 & 4545.54 & 4545.54 \\ \hline
-4 & 1 & 2 & 16.05.2023 &           &           & Acer pseudoplatanus & 10.9 & 205 & 65.25 & 3344.24 & 3344.24 \\ \hline
-4 & 1 & 3 & 16.05.2023 &           &           & Cornus sanguinea    & 15.7 & 36  & 11.46 & 103.13  & 103.13  \\ \hline
-4 & 1 & 4 & 16.05.2023 &           &           & Quercus robur       & 25.2 & 302 & 96.13 & 7257.78 & 7257.78 \\ \hline
-\end{tabular}%
-}
-\caption{Table for the recorded woody vegetation including metadata.}
-\end{table}
