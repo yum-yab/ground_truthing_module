@@ -118,11 +118,12 @@ There were two different approaches for measuring the leaf area: Using a specifi
 
 ## Photo-based approach 
 
-For the photo-based approach we preprocessed the photos with the image-software `gimp` and then calculated the leaf size with a [python script](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/leaf_area_measurement.py).
+For this approach we took Photos of single or multiple leafs on one (or two) A4 papers. 
+These photos were then preprocessed with the image-software `gimp` and then calculated the leaf size with a [python script](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/leaf_area_measurement.py).
 
 ### Preprocessing of the Photos
 
-The goal of this step is to reduce the image to the necessary parts, mainly cutting out the A4 paper sheet. For this a few steps were used:
+The goal of this step is to reduce the image to the necessary parts, mainly cutting out the A4 paper sheet. For this a few steps were performed:
 
 1. Load the image in gimp
 2. Use the `lasso-select tool` for selecting the corners of the A4 paper
@@ -138,9 +139,9 @@ The goal of this step is to reduce the image to the necessary parts, mainly cutt
 
 The code and the description how to use it can be found in [this git repository](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/). 
 Here we will only describe the main ideas of the process. 
-In general we know the area of the A4 paper, so we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` and therefor we can calculate the area of the leaf. 
+In general we know the area of the A4 paper, so to determine leaf size we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` and therefor we can calculate the area of the leaf. 
 Unfortunately shadows of not fully flat leaves can add a lot of noise to the trivial approach (converting it to greyscale and cutting at a certain threshold). 
-To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, HSV and original image was implemented to find a fitting value) and generate the bitmask in this way.
+To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, `HSV` and original image was implemented to find a fitting value) and generate the bitmask in this way.
 The transparent parts are not considered during the area calculation, only the white (paper), grey (shadows, counted as paper) and green (leaf) pixels.
 
 
