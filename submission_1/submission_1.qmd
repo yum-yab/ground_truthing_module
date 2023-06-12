@@ -35,7 +35,7 @@ Date: 16.05.2023
 
 Group-ID: 4
 
-Participants: Dennis, Fabian, Louis, Lukas, Marie-Louise, Maxwell 
+Participants: Denis, Fabian, Louis, Lukas, Marie-Louise, Maxwell 
 
 Coordinates: 51.332222, 12.384167
 
