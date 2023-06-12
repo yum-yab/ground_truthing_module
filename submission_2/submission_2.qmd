@@ -45,7 +45,32 @@ Material used:
 - Book (Flora Vegetativa)
 - Survey sheet
 
+{{< pagebreak >}}
 
+# Task 2: Leaf chlorophyll measurements
+## Procedure
+
+Material used: 
+
+- Leaf samples of 8 plant species
+- Konica Minolta SPAD 502
+- Leaf trait sheet of paper
+
+
+The aim of this measurement was to determine the leaf chlorophyll content (per area) using the *Konica Minolta SPAD-502 Plus* device. This instrument measures leaf absorbance in red and near-infrared regions using two LEDs at peak wavelengths of 650 nm and 940 nm. It calculates a Soil Plant Analysis Development (SPAD) value by dividing the light transmission intensities and determines the relative chlorophyll content in the sample leaf (Konica Minolta Optics, 2012). A more detailed description of the instrument can be found under [Süß, A., Danner, M., Obster, C., Locherer, M., Hank, T., Richter, K. (2015): Measuring Leaf Chlorophyll Content with the Konica Minolta SPAD-502Plus – Theory, Measurement, Problems, Interpretation. EnMAP Field Guides Technical Report, GFZ Data Services](https://gfzpublic.gfz-potsdam.de/rest/items/item_1388302/component/file_1388303/content) (last accessed: 06/06/2023). 
+
+We measured the chlorophyll content on the upper side of each leaf in four (*Geranium molle, G. sanguineum*) to six spots (*Acer platanoides, Alliaria petiolata, Ballota nigra, Geum urbanum, Philadelphus Coronarius, Spirae Chamaedryfolia*), depending on the leaf size and shape. During the measurement, we padi attention so that no obvious outliers were recorded, no veins were measured and that the optical window of the instrument was fully covered by the leaf. For each of the ten sampled leaves, the mean of the four to six measurements was written down on the leaf trait sheet (see columns *SPAD1...SPAD10* of table < INSERT TABLE NUMBERING>). Afterwards, the mean and standard deviation for all the leaves of each species were calculated.
+
+## Chlorophyll conversions
+
+In order to convert the mean values per species measured with the SPAD-instrument, the following equations from *Süß et al. (2015)* were used:
+
+![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
+
+
+The results of the conversions can be seen in the attached data table as well as in the figure below.
+
+![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.")
 
 {{< pagebreak >}}
 
