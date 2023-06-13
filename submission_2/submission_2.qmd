@@ -143,6 +143,11 @@ The transparent parts are not considered during the area calculation, only the w
 
 To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
 
+
+## Comparison to LEDA Database
+
+Another task was to compare our LMA values with those from the LEDA database. There, the values were only available as SLA. So we had to convert them into LMA first. The result can be seen in the plots in the appendix. If several values were available for one plant, we calculated the mean value. For two plants no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but are very similar overall.
+
 # Task 3 & 5: Leaf water content
 
 <!-- Task 3 and 5 -->
