@@ -143,6 +143,8 @@ The transparent parts are not considered during the area calculation, only the w
 
 ![Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.](imgs/leaf-area_scan_vs_cam.png "Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos."){width=70%}
 
+{{< pagebreak >}}
+
 ## LMA
 
 To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
