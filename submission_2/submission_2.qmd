@@ -153,7 +153,7 @@ To calculate the biomass of the leaves, we determined their dry weight. To do th
 
 ## Comparison to LEDA Database
 
-We further compared our LMA values with those from the LEDA database (See Figure 2 in this section). There, the values were available as mean SLA, so we converted them into LMA first (LMA = \frac{1}{SLA}). If several values were available for one plant species, we calculated the mean value. For two species (*Philadelphus Coronarius* and *Spirae Chamaedryfolia*) no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but generally similar (see Table 2 and Figure 2). Reasons for this may be inaccuracies in our sheet size script or inaccuracies in the sampling of the leaves by the respective processor (our group or people recorded in the LEDA database).
+We further compared our LMA values with those from the LEDA database (See Figure 2 in this section). There, the values were available as mean SLA, so we converted them into LMA first ($LMA = \frac{1}{SLA}$). If several values were available for one plant species, we calculated the mean value. For two species (*Philadelphus Coronarius* and *Spirae Chamaedryfolia*) no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but generally similar (see Table 2 and Figure 2). Reasons for this may be inaccuracies in our sheet size script or inaccuracies in the sampling of the leaves by the respective processor (our group or people recorded in the LEDA database).
 
 ![Comparison of our LMA values (red) to values from the LEDA database (blue)](imgs/leda_lma_comparison.png)
 
