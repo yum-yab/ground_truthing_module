@@ -2,7 +2,14 @@
 title: "Field training 02 - Leaf traits measurements"
 subtitle: "Documentation"
 subsubtitle: "Leaf traits measurements"
-author: "Denis Streitmatter"
+author: 
+    - "Group 4" 
+    - "Denis Streitmatter"
+    - "Marie-Louise Korte"
+    - "Louis Trinkle"
+    - "Maxwell Sivertsen"
+    - "Fabian Götz"
+    - "Lukas Erzfeld"
 date: last-modified
 format:
     pdf:
@@ -10,7 +17,7 @@ format:
         theme: united
         toc: true
         toc-depth: 2
-        number-sections: true
+        number-sections: false 
         number-depth: 1
         toc-title: Table of Contents
         toc-location: body
@@ -27,17 +34,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 {{< pagebreak >}}
 
-# Leaf Properties Sampling
-
-# Task 1: Procedure
+# Task 1: Leaf sampling
 
 <!-- Task1: Leaf sampling in the park and quick run through of all processing steps -->
 
 Date: 23.05.2023
 
-Group-ID: 4
 
-Participants: Dennis, Fabian, Louis, Lukas, Marie-Louise, Maxwell 
+<!-- Participants: Dennis, Fabian, Louis, Lukas, Marie-Louise, Maxwell -->
 
 Coordinates: 51.332222, 12.384167
 
@@ -64,67 +68,7 @@ The plant species that were sampled were choosen based on their abundance in the
 
 {{< pagebreak >}}
 
-## Leaf water content
 
-<!-- Task 3 and 5 -->
-The total fresh weight and dry weight of the leave samples were used to determine the equivalent water thickness (EWT, @tbl-data-summary). The total weight of the leaves was determined through carefully placing the samples on precision laboratory balances. The equivalent water thickness is calculated by substracting the weight of the dry sample from the weight of the fresh sample and then deviding by the product of the density of water and the leaf area (@eq-EWT).
-
-
- $$
- EWT = \frac{fresh\: weight\: [mg]-dry\: weight\: [mg]}{1000\:\frac{mg}{cm^{3}}\; \; leaf\: area\: [cm^{2}]}
- $$ {#eq-EWT}
-
-
-
-{{< pagebreak >}}
-
-<!-- change to landscape -->
-\KOMAoptions{paper=landscape,pagesize} 
-\recalctypearea
-
-<!-- please feel free to make these tables look prettier-->
-
-| Species | Leaf area (scanner) cm² | Leaf area (camera) cm² | Fresh weight [mg] | Dry weight [mg] | LMA [mg/cm²] scanner | LMA [mg/cm²] camera | EWT [mg/cm²] scanner | EWT [mg/cm²] camera |
-|---|---|---|---|---|---|---|---|---|
-| Philadelphus Coronarius | 719.97 | 751.19 | 13830 | 2440 | 19.20913371 | 18.41078822 | 0.02 | 0.02 |
-| Spirae Chamaedryfolia | 128.27 | 122.26 | 1760 | 620 | 13.72105715 | 14.39555047 | 0.01 | 0.01 |
-| Geranium molle | 119.11 | 141.13 | 3590 | 590 | 30.14020653 | 25.43753986 | 0.03 | 0.02 |
-| Alliaria petiolata | 810.5 | 892.12 | 17720 | 3630 | 21.8630475 | 19.86279873 | 0.02 | 0.02 |
-| Geum urbanum | 184.8 | 194.62 | 2390 | 860 | 12.93290043 | 12.28034118 | 0.01 | 0.01 |
-| Ballota nigra | 105.88 | 110.4 | 2090 | 610 | 19.73932754 | 18.93115942 | 0.01 | 0.01 |
-| Geranium sanguineum | 82.62 | 97.56 | 1910 | 530 | 23.11788913 | 19.57769578 | 0.02 | 0.01 |
-| Acer platanoides | 1142.2 | 1343.79 | 15110 | 4530 | 13.22885659 | 11.24431645 | 0.01 | 0.01 |
-
-: Leaf properties: leaf area, leaf fresh and dry weight, LMA (leaf mass per area) and EWT (equivalent water thickness) {#tbl-data-summary}
-
-{{< pagebreak >}}
-
-| Species | SPAD mean | SPAD stdv | chl Eq. 1 | chl Eq. 2 | chl Eq. 3 | chl Eq. 4 | chl Eq. 5 |
-|---|---|---|---|---|---|---|---|
-| Philadelphus Coronarius | 47.65 | 1.681434573 | 265.467675 | 621.573065 | 608.2915624 | 61.56568402 | 62.75488428 |
-| Spirae Chamaedryfolia | 45.6 | 3.215932559 | 243.8084 | 584.63104 | 564.7495158 | 56.03685716 | 56.72252579 |
-| Geranium molle | 36.1 | 3.919183588 | 155.5059 | 425.94494 | 386.0649413 | 36.23261347 | 35.51025089 |
-| Alliaria petiolata | 27.64 | 1.416725489 | 93.583776 | 301.9521344 | 257.008503 | 24.57293509 | 23.40017292 |
-| Geum urbanum | 28.03 | 2.746330886 | 96.092139 | 307.3093226 | 262.3688604 | 25.01677595 | 23.85444116 |
-| Ballota nigra | 38.44 | 4.576558629 | 175.413216 | 463.1218304 | 426.6499938 | 40.34089174 | 39.8524312 |
-| Geranium sanguineum | 48.9 | 6.534332407 | 279.1283 | 644.56894 | 635.7441646 | 65.20131502 | 66.7438002 |
-| Acer platanoides | 31.59 | 5.872998477 | 120.535811 | 357.8139034 | 313.8933755 | 29.4575616 | 28.43095204 |
-
-: Leaf properties: SPAD measurements and chlorophyll concentration from 5 different equations {#tbl-data-summary} 
-
-{{< pagebreak >}}
-
-<!-- change back to portrait -->
-\KOMAoptions{paper=portrait,pagesize} 
-\recalctypearea  
-
-Material used:
-
-- Smartphone (GPS + plant species determination)
-- Book (Flora Vegetativa)
-- Survey sheet
-
-{{< pagebreak >}}
 
 # Task 2: Leaf chlorophyll measurements
 ## Procedure
@@ -152,66 +96,6 @@ The results of the conversions can be seen in the attached data table as well as
 ![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.")
 
 {{< pagebreak >}}
-
-## Leaf images
-
-{{< pagebreak >}}
-
-## Recorded species tables
-
-
-
-
-{{< pagebreak >}}
-
-<!--
-Table in landscape format (uncomment if needed)
-
-# landscape table format (better?)
-
-::::::::{.landscape data-latex=""}
-
-\begin{table}[]
-\fontsize{22}{\baselineskip}\selectfont
-\renewcommand{\arraystretch}{4}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{Group-ID} &
-  \textbf{Plot-ID} &
-  \textbf{Subplot-ID} &
-  \textbf{Date} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}X-Coordinate \\ center\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Y-Coordinate \\ center\end{tabular}} &
-  \textbf{Litter / \%} &
-  \textbf{Soil / \%} &
-  \textbf{Water / \%} &
-  \textbf{Moss / \%} &
-  \textbf{Height / cm} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Acer \\ platanoides\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Achillea \\ millefolium\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Bellis \\ perennis\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Capsella \\ bursa-pastoris\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Dactylis \\ glomerata\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Elymus \\ repens\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Geranium \\ molle\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Geranium \\ pusillum\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Lolium \\ perenne\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Poa \\ annua\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Polygonum \\ aviculare\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Trifolium \\ repens\end{tabular}} &
-  \textbf{\begin{tabular}[c]{@{}c@{}}Veronica \\ arvensis\end{tabular}} \\ \hline
-4 & 1 & 1 & 16.05.2023 & 51.332222 & 12.384167 & 1.5 & 11 & 0 & 8 & 6 &     &     & 15 & 4 &   & 2  & 15 & 1 & 50 & 10 & 0.5 & 10 & 1   \\ \hline
-4 & 1 & 2 & 16.05.2023 &           &           & 1   & 4  & 0 & 1 & 6 &     & 0.5 & 22 &   & 2 &    & 18 & 1 & 55 & 15 & 0.5 &    & 1   \\ \hline
-4 & 1 & 3 & 16.05.2023 &           &           & 1   & 3  & 0 & 2 & 6 & 0.5 & 3   & 8  &   &   & 1  & 19 &   & 38 & 19 &     & 18 & 0.5 \\ \hline
-4 & 1 & 4 & 16.05.2023 &           &           & 1   & 10 & 0 & 1 & 4 &     &     & 6  &   &   & 15 & 17 &   & 28 & 10 & 0.5 & 1  & 2   \\ \hline
-\end{tabular}%
-}
-\caption{Subplot x species table for the recorded herbaceous vegetation. The values are the cover fraction of the total plot in {[}\%{]}.}
-\end{table}
-::::::::
-
--->
 
 # Task 4: Leaf area measurement
 
@@ -259,3 +143,53 @@ The transparent parts are not considered during the area calculation, only the w
 
 To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
 
+# Task 3 & 5: Leaf water content
+
+<!-- Task 3 and 5 -->
+The total fresh weight and dry weight of the leave samples were used to determine the equivalent water thickness (EWT, @tbl-data-summary). The total weight of the leaves was determined through carefully placing the samples on precision laboratory balances. The equivalent water thickness is calculated by substracting the weight of the dry sample from the weight of the fresh sample and then deviding by the product of the density of water and the leaf area (@eq-EWT).
+
+
+ $$
+ EWT = \frac{fresh\: weight\: [mg]-dry\: weight\: [mg]}{1000\:\frac{mg}{cm^{3}}\; \; leaf\: area\: [cm^{2}]}
+ $$ {#eq-EWT}
+
+# Appendix
+
+<!-- change to landscape -->
+\KOMAoptions{paper=landscape,pagesize} 
+\recalctypearea
+
+<!-- please feel free to make these tables look prettier-->
+
+| Species | Leaf area (scanner) cm² | Leaf area (camera) cm² | Fresh weight [mg] | Dry weight [mg] | LMA [mg/cm²] scanner | LMA [mg/cm²] camera | EWT [mg/cm²] scanner | EWT [mg/cm²] camera |
+|---|---|---|---|---|---|---|---|---|
+| Philadelphus Coronarius | 719.97 | 751.19 | 13830 | 2440 | 19.20913371 | 18.41078822 | 0.02 | 0.02 |
+| Spirae Chamaedryfolia | 128.27 | 122.26 | 1760 | 620 | 13.72105715 | 14.39555047 | 0.01 | 0.01 |
+| Geranium molle | 119.11 | 141.13 | 3590 | 590 | 30.14020653 | 25.43753986 | 0.03 | 0.02 |
+| Alliaria petiolata | 810.5 | 892.12 | 17720 | 3630 | 21.8630475 | 19.86279873 | 0.02 | 0.02 |
+| Geum urbanum | 184.8 | 194.62 | 2390 | 860 | 12.93290043 | 12.28034118 | 0.01 | 0.01 |
+| Ballota nigra | 105.88 | 110.4 | 2090 | 610 | 19.73932754 | 18.93115942 | 0.01 | 0.01 |
+| Geranium sanguineum | 82.62 | 97.56 | 1910 | 530 | 23.11788913 | 19.57769578 | 0.02 | 0.01 |
+| Acer platanoides | 1142.2 | 1343.79 | 15110 | 4530 | 13.22885659 | 11.24431645 | 0.01 | 0.01 |
+
+: Leaf properties: leaf area, leaf fresh and dry weight, LMA (leaf mass per area) and EWT (equivalent water thickness) {#tbl-data-summary}
+
+{{< pagebreak >}}
+
+| Species | SPAD mean | SPAD stdv | chl Eq. 1 | chl Eq. 2 | chl Eq. 3 | chl Eq. 4 | chl Eq. 5 |
+|---|---|---|---|---|---|---|---|
+| Philadelphus Coronarius | 47.65 | 1.681434573 | 265.467675 | 621.573065 | 608.2915624 | 61.56568402 | 62.75488428 |
+| Spirae Chamaedryfolia | 45.6 | 3.215932559 | 243.8084 | 584.63104 | 564.7495158 | 56.03685716 | 56.72252579 |
+| Geranium molle | 36.1 | 3.919183588 | 155.5059 | 425.94494 | 386.0649413 | 36.23261347 | 35.51025089 |
+| Alliaria petiolata | 27.64 | 1.416725489 | 93.583776 | 301.9521344 | 257.008503 | 24.57293509 | 23.40017292 |
+| Geum urbanum | 28.03 | 2.746330886 | 96.092139 | 307.3093226 | 262.3688604 | 25.01677595 | 23.85444116 |
+| Ballota nigra | 38.44 | 4.576558629 | 175.413216 | 463.1218304 | 426.6499938 | 40.34089174 | 39.8524312 |
+| Geranium sanguineum | 48.9 | 6.534332407 | 279.1283 | 644.56894 | 635.7441646 | 65.20131502 | 66.7438002 |
+| Acer platanoides | 31.59 | 5.872998477 | 120.535811 | 357.8139034 | 313.8933755 | 29.4575616 | 28.43095204 |
+
+: Leaf properties: SPAD measurements and chlorophyll concentration from 5 different equations {#tbl-data-summary} 
+
+{{< pagebreak >}}
+
+\KOMAoptions{paper=portrait,pagesize} 
+\recalctypearea
