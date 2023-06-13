@@ -45,7 +45,32 @@ Material used:
 - Book (Flora Vegetativa)
 - Survey sheet
 
+{{< pagebreak >}}
 
+# Task 2: Leaf chlorophyll measurements
+## Procedure
+
+Material used: 
+
+- Leaf samples of 8 plant species
+- Konica Minolta SPAD 502
+- Leaf trait sheet of paper
+
+
+The aim of this measurement was to determine the leaf chlorophyll content (per area) using the *Konica Minolta SPAD-502 Plus* device. This instrument measures leaf absorbance in red and near-infrared regions using two LEDs at peak wavelengths of 650 nm and 940 nm. It calculates a Soil Plant Analysis Development (SPAD) value by dividing the light transmission intensities and determines the relative chlorophyll content in the sample leaf (Konica Minolta Optics, 2012). A more detailed description of the instrument can be found under [Süß, A., Danner, M., Obster, C., Locherer, M., Hank, T., Richter, K. (2015): Measuring Leaf Chlorophyll Content with the Konica Minolta SPAD-502Plus – Theory, Measurement, Problems, Interpretation. EnMAP Field Guides Technical Report, GFZ Data Services](https://gfzpublic.gfz-potsdam.de/rest/items/item_1388302/component/file_1388303/content) (last accessed: 06/06/2023). 
+
+We measured the chlorophyll content on the upper side of each leaf in four (*Geranium molle, G. sanguineum*) to six spots (*Acer platanoides, Alliaria petiolata, Ballota nigra, Geum urbanum, Philadelphus Coronarius, Spirae Chamaedryfolia*), depending on the leaf size and shape. During the measurement, we padi attention so that no obvious outliers were recorded, no veins were measured and that the optical window of the instrument was fully covered by the leaf. For each of the ten sampled leaves, the mean of the four to six measurements was written down on the leaf trait sheet (see columns *SPAD1...SPAD10* of table < INSERT TABLE NUMBERING>). Afterwards, the mean and standard deviation for all the leaves of each species were calculated.
+
+## Chlorophyll conversions
+
+In order to convert the mean values per species measured with the SPAD-instrument, the following equations from *Süß et al. (2015)* were used:
+
+![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
+
+
+The results of the conversions can be seen in the attached data table as well as in the figure below.
+
+![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.")
 
 {{< pagebreak >}}
 
@@ -111,7 +136,12 @@ Table in landscape format (uncomment if needed)
 
 # Task 4: Leaf area measurement
 
-In the next step, we determined the mass per leaf area. We took the sheets out of the paper bag and placed them one by one into the sheet scanner. We had to make sure that the sheets were fully spread out, did not overlap, and were within the measurement range area. For some sheets, the scanner was not large enough to measure all 10 sheets at once. So we did multiple scans and added up and documented the measured leaf area for each species.  
+In the next step, we determined the mass per leaf area.
+For this task two different methods were used: A specialized scanner for this exact purpose and a python script calculating the leaf area based of photos on an a DIN-A4 paper.
+
+## Specialized Scanner
+
+ We took the sheets out of the paper bag and placed them one by one into the sheet scanner. We had to make sure that the sheets were fully spread out, did not overlap, and were within the measurement range area. For some sheets, the scanner was not large enough to measure all 10 sheets at once. So we did multiple scans and added up and documented the measured leaf area for each species.  
 
 To check the correctness of the scanner we performed a second type of leaf surface measurement. For this, we placed the leaves on a DinA4 sheet and took a photo. We wrote a small script to convert the scans of sheets and paper into black and white images and calculate the cumulative sheet area from the proportion of black pixels of the total paper area. Then we compared the measured area with the result of the sheet scanner. They were very similar everywhere with slight variations (see documentation).  
 There were two different approaches for measuring the leaf area: Using a specific tool or calculating it on the base of photos of the leafs on standardised A4 paper sheets
@@ -120,6 +150,7 @@ There were two different approaches for measuring the leaf area: Using a specifi
 
 For this approach we took Photos of single or multiple leafs on one (or two) A4 papers. 
 These photos were then preprocessed with the image-software `gimp` and then calculated the leaf size with a [python script](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/leaf_area_measurement.py).
+The photos (unprocessed and otherwise) can be found [here](https://github.com/yum-yab/ground_truthing_module/tree/main/leaf_area_measure/leaf_images)
 
 ### Preprocessing of the Photos
 
@@ -139,7 +170,7 @@ The goal of this step is to reduce the image to the necessary parts, mainly cutt
 
 The code and the description how to use it can be found in [this git repository](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/). 
 Here we will only describe the main ideas of the process. 
-In general we know the area of the A4 paper, so to determine leaf size we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` and therefor we can calculate the area of the leaf. 
+Since we know the area of the A4 paper, to determine leaf size we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` ($\equiv$ DIN-A4) and therefor we can calculate the area of the leaf. 
 Unfortunately shadows of not fully flat leaves can add a lot of noise to the trivial approach (converting it to greyscale and cutting at a certain threshold). 
 To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, `HSV` and original image was implemented to find a fitting value) and generate the bitmask in this way.
 The transparent parts are not considered during the area calculation, only the white (paper), grey (shadows, counted as paper) and green (leaf) pixels.
