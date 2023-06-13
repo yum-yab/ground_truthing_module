@@ -63,7 +63,11 @@ Materials used for Analysis:
 
 The aim of the leaf property sampling was to collect and analyse leaf traits of different plant species. On May 23rd 2023, we collected leaf samples of eight different species in Kanonenteichanlage, a small park between Liebigstraße and Brüderstraße in 04103 Leipzig, Germany. 
 
-The plant species that were sampled were choosen based on their abundance in the park. For each species 10 leaves from different individuals were sampled. When sampling leaves we were careful to sample the whole leaf. Leaves were chosen based on the following criteria, healthy, fully grown and from a sun-lit environment where possible. We sampled trees, shrubs and herbs. The plants were identified using the smartphone app 'FloraIncognita' and the latin names of the species were recorded in a table. The leaves were collected in labeled paper bags and taken back to the seminar room for further analyisis. The leaf traits recorded for each species were fresh weight, dry weight, leaf area, and chlorophyll content. The fresh weight was determined first using a precision balance. In the next step chlorophyll concentration was derived from plant greenness using a Soil Plant Analysis Development (SPAD) meter. We used the leaf scanner to measure leaf area, we also took pictures of the leafs on an A4 sheet to derive leaf area using a script for image analysis. The leaves were then put in a drying cabinate at 50° to 55° for 48h. In a last step dry weight was determined. All the data was recorded in a google sheet. 
+The plant species that were sampled were choosen based on their abundance in the park. The plants were identified using the smartphone app 'FloraIncognita' and the book 'Flora Vegetativa - Ein Bestimmungsbuch für Pflanzen der Schweiz im blütenlosen Zustand' (2020) by Eggenberg and Möhl and the botanical names of the species were recorded in a table. There were slight uncertainties distinguishing between *Geranium molle* and *G. sanguineum*, all remaining species were clearly identifiabe. 
+
+For each species 10 leaves from different individuals were sampled. When sampling leaves, we were careful to sample the whole leaf including petiole and all other leaf attachments. Leaves were chosen based on the following criteria, healthy, fully grown and from a sun-lit environment where possible. We sampled trees, shrubs and herbs. The leaves were collected in labeled paper bags and taken back to the seminar room for further analyses. 
+
+The leaf traits recorded for each species were fresh weight, dry weight, leaf area, and chlorophyll content. The fresh weight was determined first using a precision balance. In the next step, chlorophyll concentration was derived from plant greenness using a Soil Plant Analysis Development (SPAD) meter (for more detailed information see Task 2). We used the leaf scanner to measure leaf area, and we took pictures of the leaves on a white A4 sheet to derive leaf area using a script for image analysis (see Task 4). The leaves were then put in a drying cabinate at 50° to 55° for 48h. In a last step the dry weight was determined. All the data were recorded in a google sheet and can be seen in the tables in the Appendix.
 
 
 {{< pagebreak >}}
@@ -82,7 +86,7 @@ Material used:
 
 The aim of this measurement was to determine the leaf chlorophyll content (per area) using the *Konica Minolta SPAD-502 Plus* device. This instrument measures leaf absorbance in red and near-infrared regions using two LEDs at peak wavelengths of 650 nm and 940 nm. It calculates a Soil Plant Analysis Development (SPAD) value by dividing the light transmission intensities and determines the relative chlorophyll content in the sample leaf (Konica Minolta Optics, 2012). A more detailed description of the instrument can be found under [Süß, A., Danner, M., Obster, C., Locherer, M., Hank, T., Richter, K. (2015): Measuring Leaf Chlorophyll Content with the Konica Minolta SPAD-502Plus – Theory, Measurement, Problems, Interpretation. EnMAP Field Guides Technical Report, GFZ Data Services](https://gfzpublic.gfz-potsdam.de/rest/items/item_1388302/component/file_1388303/content) (last accessed: 06/06/2023). 
 
-We measured the chlorophyll content on the upper side of each leaf in four (*Geranium molle, G. sanguineum*) to six spots (*Acer platanoides, Alliaria petiolata, Ballota nigra, Geum urbanum, Philadelphus Coronarius, Spirae Chamaedryfolia*), depending on the leaf size and shape. During the measurement, we padi attention so that no obvious outliers were recorded, no veins were measured and that the optical window of the instrument was fully covered by the leaf. For each of the ten sampled leaves, the mean of the four to six measurements was written down on the leaf trait sheet (see columns *SPAD1...SPAD10* of table < INSERT TABLE NUMBERING>). Afterwards, the mean and standard deviation for all the leaves of each species were calculated.
+We measured the chlorophyll content on the upper side of each leaf in four (*Geranium molle, G. sanguineum*) to six spots (*Acer platanoides, Alliaria petiolata, Ballota nigra, Geum urbanum, Philadelphus Coronarius, Spirae Chamaedryfolia*), depending on the leaf size and shape. During the measurement, we paid attention so that no obvious outliers were recorded, no veins were measured and that the optical window of the instrument was fully covered by the leaf. For each of the ten sampled leaves, the mean of the four to six measurements was written down on the leaf trait sheet. Afterwards, the mean and standard deviation for all the leaves of each species were calculated (see Table 3).
 
 ## Chlorophyll conversions
 
@@ -90,44 +94,39 @@ In order to convert the mean values per species measured with the SPAD-instrumen
 
 ![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](imgs/SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
 
-It is to mention that the unit of the equation from Monje & Bugbee (1992) was wrong and therefore we divided the resulting values by 10. We further recalculated the equations from Markwell et al. (1995) from $\mu mol/mm^2$ to $\mu g/mm^2$ by multiplicating the values with 0.089348898 (because the molar mass of chlorophyll A is 893.48898 g/mol).
+It is to mention that the unit of the equation from Monje & Bugbee (1992) was wrong and therefore we divided the resulting values by 10. We further recalculated the equations from Markwell et al. (1995) from $\mu mol/m^2$ to $\mu g/cm^2$ by multiplicating the values with 0.089348898 (because the molar mass of chlorophyll A is 893.48898 g/mol and the area unit of the equations was $m^2$).
 
-The results of the conversions can be seen in the attached data table as well as in the figure below.
+The results of the conversions can be seen in the attached data Table 3 (columns *Chl Eq. 1* ... *Chl Eq. 5*) as well as in Figure 2 below. All equations yield relatively similar results (see curves 2-5), except the one from Monje & Bugbee (1992), which results in lower chlorophyll A values.
 
-![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](imgs/SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values."){width=80%}
-
-All equations yield relatively similar results (see curves 2-5), except the one from Monje & Bugbee (1992), which results in lower values.
+![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values. The unit of the chlorophyll values is $\mu g/cm^2$.](imgs/SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values."){width=80%}
 
 {{< pagebreak >}}
 
 # Task 4: Leaf area measurement
 
 In the next step, we determined the mass per leaf area.
-For this task two different methods were used: A specialized scanner for this exact purpose and a python script calculating the leaf area based of photos on an a DIN-A4 paper.
+For this task two different methods were used: A specialized scanner for this exact purpose and a python script calculating the leaf area based of photos on a white DIN-A4 paper.
 
 ## Specialized Scanner
 
- We took the sheets out of the paper bag and placed them one by one into the sheet scanner. We had to make sure that the sheets were fully spread out, did not overlap, and were within the measurement range area. For some sheets, the scanner was not large enough to measure all 10 sheets at once. So we did multiple scans and added up and documented the measured leaf area for each species.  
-
-To check the correctness of the scanner we performed a second type of leaf surface measurement. For this, we placed the leaves on a DinA4 sheet and took a photo. We wrote a small script to convert the scans of sheets and paper into black and white images and calculate the cumulative sheet area from the proportion of black pixels of the total paper area. Then we compared the measured area with the result of the sheet scanner. They were very similar everywhere with slight variations (see documentation).  
-There were two different approaches for measuring the leaf area: Using a specific tool or calculating it on the base of photos of the leafs on standardised A4 paper sheets
+We took the leaves out of the paper bag and placed them one by one into the sheet scanner. We made sure that the sheets were fully spread out, did not overlap, and were within the measurement range area. For some leaves, the scanner was not large enough to measure all 10 pieces at once. Therefore we conducted multiple scans, added the values up and documented the measured leaf area for each species.  
 
 ## Photo-based approach 
 
-For this approach we took Photos of single or multiple leafs on one (or two) A4 papers. 
-These photos were then preprocessed with the image-software `gimp` and then calculated the leaf size with a [python script](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/leaf_area_measurement.py).
-The photos (unprocessed and otherwise) can be found [here](https://github.com/yum-yab/ground_truthing_module/tree/main/leaf_area_measure/leaf_images)
+To validate the accuracy of the scanner, we performed a second type of leaf surface measurement. For this approach, we placed single or multiple leaves on one (or two) white DIN-A4 papers and took a photo, covering all sampled leaves of each species. 
+We preprocessed these photos using the free image-software `gimp` and then calculated the leaf size with this [python script](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/leaf_area_measurement.py).
+The photos (unprocessed and otherwise) can be found [here](https://github.com/yum-yab/ground_truthing_module/tree/main/leaf_area_measure/leaf_images).
 
 ### Preprocessing of the Photos
 
-The goal of this step is to reduce the image to the necessary parts, mainly cutting out the A4 paper sheet. For this a few steps were performed:
+The goal of this step was to reduce the image to the necessary parts, mainly cutting out the A4 paper sheet. For this, these steps were performed:
 
-1. Load the image in gimp
+1. Load the image in `gimp`
 2. Use the `lasso-select tool` for selecting the corners of the A4 paper
 3. Press `CTRL + i` for inverting the selection
 4. Press `CTRL + x` for cutting out everything thats not on the paper
 5. Use `Image > Crop to content` to reduce the image size
-    - this step is optional since alpha channel (= transparency) is ignored in the script, but this reduces file size and therefor makes it a bit faster
+    - this step is optional since alpha channel (= transparency) is ignored in the script, but this reduces file size and therefore makes it a bit faster
 6. Save images in proper format for script:
     - Name of the file `{leaf-number}_someuniquename_{double}.jpg` (only use `double` if two A4 papers were used)
     - save all files of one species in one directory
@@ -135,11 +134,14 @@ The goal of this step is to reduce the image to the necessary parts, mainly cutt
 ### Calculating the leaf size
 
 The code and the description how to use it can be found in [this git repository](https://github.com/yum-yab/ground_truthing_module/blob/main/leaf_area_measure/). 
-Here we will only describe the main ideas of the process. 
-Since we know the area of the A4 paper, to determine leaf size we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` ($\equiv$ DIN-A4) and therefor we can calculate the area of the leaf. 
-Unfortunately shadows of not fully flat leaves can add a lot of noise to the trivial approach (converting it to greyscale and cutting at a certain threshold). 
-To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, `HSV` and original image was implemented to find a fitting value) and generate the bitmask in this way.
+Here, we will only describe the main ideas of the process. 
+Since we know the area of the A4 paper, to determine leaf size we only need to know the number of `leaf-pixels` in relation to `leaf-pixels + paper-pixels` ($\equiv$ DIN-A4) and therefore we can calculate the area of the leaf. 
+
+Unfortunately, shadows of not fully flat leaves can add a lot of noise to the trivial approach (converting it to greyscale and cutting at a certain threshold). 
+To fix this, we transposed the image into the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), determine a  saturation threshold here (a comparison feature between Bitmask, `HSV` and original image was implemented to find a fitting value) and generate the bitmask in this way.
 The transparent parts are not considered during the area calculation, only the white (paper), grey (shadows, counted as paper) and green (leaf) pixels.
+
+The output of the script for each plant species can be seen in Table 1. Then, we compared the measured area with the result of the sheet scanner. They showed similar values with slight variations (see Table 1 and Figure 1: the red line denotes the line of perfect fit, the blue dots are the respective values of the camera/scanner approaches).  
 
 ![Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.](imgs/leaf-area_scan_vs_cam.png "Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos."){width=70%}
 
@@ -147,18 +149,18 @@ The transparent parts are not considered during the area calculation, only the w
 
 ## LMA
 
-To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
+To calculate the biomass of the leaves, we determined their dry weight. To do this, we put the samples back in the paper bag and afterwards in the drying oven at 50 - 55 °C for 72h. Then, we measured the dry weight using a precision balance and noted the values. Finally, we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Area (LMA).  
 
 ## Comparison to LEDA Database
 
-Another task was to compare our LMA values with those from the LEDA database (See Figure 2 in this section). There, the values were available as mean SLA, so we converted them into LMA first. If several values were available for one plant, we calculated the mean value. For two plants no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but are very similar overall.
+We further compared our LMA values with those from the LEDA database (See Figure 2 in this section). There, the values were available as mean SLA, so we converted them into LMA first (LMA = \frac{1}{SLA}). If several values were available for one plant species, we calculated the mean value. For two species (*Philadelphus Coronarius* and *Spirae Chamaedryfolia*) no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but generally similar (see Table 2 and Figure 2). Reasons for this may be inaccuracies in our sheet size script or inaccuracies in the sampling of the leaves by the respective processor (our group or people recorded in the LEDA database).
 
 ![Comparison of our LMA values (red) to values from the LEDA database (blue)](imgs/leda_lma_comparison.png)
 
 # Task 3 & 5: Leaf water content
 
 <!-- Task 3 and 5 -->
-The total fresh weight and dry weight of the leave samples were used to determine the equivalent water thickness (EWT, @tbl-data-summary). The total weight of the leaves was determined through carefully placing the samples on precision laboratory balances. The equivalent water thickness is calculated by substracting the weight of the dry sample from the weight of the fresh sample and then deviding by the product of the density of water and the leaf area (@eq-EWT).
+The total fresh weight and dry weight of the leaf samples were used to determine the equivalent water thickness (EWT, @tbl-data-summary). The total weight of the leaves was determined through carefully placing the samples on precision laboratory balances. The equivalent water thickness is calculated by substracting the weight of the dry sample from the weight of the fresh sample and then dividing by the product of the density of water and the leaf area (@eq-EWT).
 
 
  $$
