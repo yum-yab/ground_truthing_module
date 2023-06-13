@@ -88,13 +88,13 @@ We measured the chlorophyll content on the upper side of each leaf in four (*Ger
 
 In order to convert the mean values per species measured with the SPAD-instrument, the following equations from *Süß et al. (2015)* were used:
 
-![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
+![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](imgs/SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
 
 It is to mention that the unit of the equation from Monje & Bugbee (1992) was wrong and therefore we divided the resulting values by 10. We further recalculated the equations from Markwell et al. (1995) from $\mu mol/mm^2$ to $\mu g/mm^2$ by multiplicating the values with 0.089348898 (because the molar mass of chlorophyll A is 893.48898 g/mol).
 
 The results of the conversions can be seen in the attached data table as well as in the figure below.
 
-![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.")
+![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](imgs/SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values."){width=80%}
 
 All equations yield relatively similar results (see curves 2-5), except the one from Monje & Bugbee (1992), which results in lower values.
 
@@ -141,15 +141,17 @@ Unfortunately shadows of not fully flat leaves can add a lot of noise to the tri
 To fix this we transposed the image in the `HSV` color space, where all grey/white colors have a very low saturation value (compared to the green leaves), so we determine a  saturation threshold here (a comparison feature between Bitmask, `HSV` and original image was implemented to find a fitting value) and generate the bitmask in this way.
 The transparent parts are not considered during the area calculation, only the white (paper), grey (shadows, counted as paper) and green (leaf) pixels.
 
+![Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.](imgs/leaf-area_scan_vs_cam.png "Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos."){width=70%}
 
 ## LMA
 
 To calculate the biomass of the sheets, we now had to determine the dry weight of the sheets. To do this, we put the leaves back in the paper bag, and put them in the drying oven at 50 - 55 °C. The samples were dried for 72h. Then we measured the dry weight and noted the values. Finally we calculated the ratio of dry weight to leaf area in mg/cm², which is the Leaf mass per Aria (LMA).  
+
 ## Comparison to LEDA Database
 
-Another task was to compare our LMA values with those from the LEDA database. There, the values were only available as SLA. So we had to convert them into LMA first. The result can be seen in the plots in the appendix. If several values were available for one plant, we calculated the mean value. For two plants no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but are very similar overall.
+Another task was to compare our LMA values with those from the LEDA database (See Figure 2 in this section). There, the values were available as mean SLA, so we converted them into LMA first. If several values were available for one plant, we calculated the mean value. For two plants no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but are very similar overall.
 
-![Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.](leaf-area_scan_vs_cam.png "Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.")
+![Comparison of our LMA values (red) to values from the LEDA database (blue)](imgs/leda_lma_comparison.png)
 
 # Task 3 & 5: Leaf water content
 
@@ -160,6 +162,7 @@ The total fresh weight and dry weight of the leave samples were used to determin
  $$
  EWT = \frac{fresh\: weight\: [mg]-dry\: weight\: [mg]}{1000\:\frac{mg}{cm^{3}}\; \; leaf\: area\: [cm^{2}]}
  $$ {#eq-EWT}
+{{< pagebreak >}}
 
 # Appendix
 
