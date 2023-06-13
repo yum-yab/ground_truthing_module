@@ -149,6 +149,7 @@ To calculate the biomass of the sheets, we now had to determine the dry weight o
 
 Another task was to compare our LMA values with those from the LEDA database. There, the values were only available as SLA. So we had to convert them into LMA first. The result can be seen in the plots in the appendix. If several values were available for one plant, we calculated the mean value. For two plants no values were available in the LEDA database. Overall, our values are slightly higher than those in the database, but are very similar overall.
 
+![Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.](leaf-area_scan_vs_cam.png "Scatterplot comparing results of Leaf area from the scanner vs Leaf area out of camera photos.")
 
 # Task 3 & 5: Leaf water content
 
