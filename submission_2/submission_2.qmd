@@ -90,10 +90,13 @@ In order to convert the mean values per species measured with the SPAD-instrumen
 
 ![Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.](SPAD_conversion_table.png "Table with formulas to convert measured SPAD pigment values to chlorophyll per area values.")
 
+It is to mention that the unit of the equation from Monje & Bugbee (1992) was wrong and therefore we divided the resulting values by 10. We further recalculated the equations from Markwell et al. (1995) from $\mu mol/mm^2$ to $\mu g/mm^2$ by multiplicating the values with 0.089348898 (because the molar mass of chlorophyll A is 893.48898 g/mol).
 
 The results of the conversions can be seen in the attached data table as well as in the figure below.
 
 ![Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.](SPAD_conversion_variation.png "Variation of the different equations used to convert the measured SPAD-values to real chlorophyll values.")
+
+All equations yield relatively similar results (see curves 2-5), except the one from Monje & Bugbee (1992), which results in lower values.
 
 {{< pagebreak >}}
 
