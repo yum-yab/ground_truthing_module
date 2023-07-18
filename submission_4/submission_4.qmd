@@ -1,0 +1,37 @@
+---
+title: "submission_4"
+subtitle: "Documentation"
+subsubtitle: "Leaf traits measurements"
+author: | 
+    | **Group 4** 
+    | Denis Streitmatter 
+    | Marie-Louise Korte 
+    | Louis Trinkle 
+    | Maxwell Sivertsen 
+    | Fabian Götz 
+    | Lukas Erzfeld
+date: last-modified
+format:
+    pdf:
+        documentclass: scrreport
+        theme: united
+        toc: true
+        toc-depth: 2
+        number-sections: false 
+        number-depth: 1
+        toc-title: Table of Contents
+        toc-location: body
+        colorlinks: true
+header-includes:  
+- \usepackage{graphicx}
+- \usepackage{lscape}
+- \usepackage{array}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+{{< pagebreak >}}
+
+# 
+
