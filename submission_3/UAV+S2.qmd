@@ -1,0 +1,144 @@
+---
+title: "UAV vs Sentinel-2 height comparisons"
+subtitle: "Documentation"
+author: "Fabian Götz"
+date: 6/24/23
+format:
+    pdf:
+        documentclass: scrreport
+        theme: united
+        toc: true
+        toc-depth: 2
+        number-sections: true
+        number-depth: 1
+        toc-title: Table of Contents
+        toc-location: body
+        colorlinks: true
+header-includes:  
+- \usepackage{graphicx}
+- \usepackage{lscape}
+- \usepackage{array}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+{{< pagebreak >}}
+
+# How well do Sentinel-based height estimates correspond to UAV-based height?
+
+Date: 24.06.2023
+
+Group-ID: 4
+
+Participants: Denis, Fabian, Louis, Lukas, Marie-Louise, Maxwell 
+
+Material used:
+
+- ETH Sentinel-2 data
+- UAV data
+
+## Top canopy height per Sentinel-pixel
+
+As the figures in Figure 1.1 - 1.3 show, the UAV estimates differ significantly from those of the S2 data. UAV peak height per pixel shows a scale with a maximum of 35 and a minimum of 0. In comparison, S2 peak height per pixel shows only a maximum of 33 and a minimum of 26. Thus, the range of UAV values is much larger. This suggests a much finer spatial resolution leading to the differences. This confirms what we have already learned, that UAV is able to record at a finer spatial resolution than satellites are able to, due to their distance. Thus, we assume that UAV are closer to ground truth than Sentinel-2. While the histograms show the general distribution of the data, the maps allow us to see the distributions based on the coordinates. In the map of the residuals it can be seen in another way that the measured values of the two measurement methods are different. Specifically, one can see that Sentinel-2 does not resolve accurately enough to detect locations with low tree heights. Thus, the values of Sentinel-2 are too high on average. 
+
+### Plot images
+
+\begin{figure}[htbp]
+  \centering
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/uav_height.png}
+    \caption{Map of UAV-based height estimation}
+    \label{fig:image1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/uav_height_hist.png}
+    \caption{Histogram of UAV-based height estimation}
+    \label{fig:image2}
+  \end{subfigure}
+
+  \caption{UAV-based height estimation}
+  \label{uav}
+\end{figure}
+
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/s2_height.png}
+    \caption{Map of Sentinel-2-based height estimation}
+    \label{fig:image3}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/s2_height_hist.png}
+    \caption{Histogram of Sentinel-2-based height}
+    \label{fig:image4}
+  \end{subfigure}
+
+  \caption{Sentinel-2-based height estimation}
+  \label{fig:sentinel}
+\end{figure}
+
+\begin{figure}[htbp]
+
+  \includegraphics[width=\textwidth]{images/residuals.png}
+  \caption{Residuals of the two height measurements}
+  \label{fig:sentinel}
+\end{figure}
+
+
+{{< pagebreak >}}
+
+## Standard deviation of height per Sentinel-pixel
+
+The standard deviation (SD) of the UAV pixels ranges from 0 to 8 meters. In comparison, the S2 SD shows a height of the Sentinel pixel that ranges from about 6m at the low end to 7m as the upper value. This shows that UAV's values are much more spread out than Sentinel's. This indicates that UAV has a more accurate resolution of the data.
+
+In summary, this exercise shows the differences between UAV and S2 data quality in terms of spatial resolution. The exercise shows the increase in available information when the spatial resolution is increased by using UAV.
+
+### Plot images
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/uav_sd.png}
+    \caption{Map of standard deviation of UAV measurement}
+    \label{fig:image5}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/uav_sd_hist.png}
+    \caption{Histogram of standard deviation of UAV measurement}
+    \label{fig:image6}
+  \end{subfigure}
+
+  \caption{UAV standard deviation}
+  \label{fig:uav_sd}
+\end{figure}
+
+\begin{figure}[htbp]
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/s2_sd.png}
+    \caption{Map of standard deviation of S2 measurement}
+    \label{fig:image7}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/s2_sd_hist.png}
+    \caption{Histogram of standard deviation of S2 measurement}
+    \label{fig:image8}
+  \end{subfigure}
+
+  \caption{Sentinel-2 standard deviation}
+  \label{fig:uav_sd}
+\end{figure}
+
+{{< pagebreak >}}
+
+## Compare the Metashape DTM (DJI_202305311408_001_crane-2022-05_dem.tif) with the DTM based on the point cloud without the crane. Did the cleaning solve the problem?
+
+The problem is not explicitly given here, however from the observations available it
+appears as though the cleaning and creation of a DTM using the point clouds results in very low spatial resolution. This is what we would expect, given that the DTM created from the LiDAR data using the rasterization tool was set to a resolution of 10 - 30m. In our specific case it was set to 15.
