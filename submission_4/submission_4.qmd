@@ -106,7 +106,7 @@ But there are a few things to consider:
 2. Also the further away from the device a tree is, the more likely it is to be (partly) occluded by closer objects.
 
 As expected, the Sentinel 2 data generally overestimates the canopy height, with a far larger part having negative residuals (colored red in @fig-residuals-stats). 
-Interestingly a small section in the map (bottom right, the area with the highest trees according to TLS data) 
+Interestingly only a small section in the map (bottom right, the area with the highest trees according to TLS data) is underestimated. 
 
 
 ![Residuals of the comparison. The far more precise TLS data serves here as the truth. Left is a map of residuals, right is a histogram of the distribution](TLS_plots/figures/residuals_stats.png){#fig-residuals-stats}
