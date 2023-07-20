@@ -1,21 +1,30 @@
 ---
-title: "submission_4"
+title: "Comparison of canopy height mesurment between TLS and Sentinel2 data"
 subtitle: "Documentation"
 subsubtitle: "Leaf traits measurements"
-author: | 
-    | **Group 4** 
-    | Denis Streitmatter 
-    | Marie-Louise Korte 
-    | Louis Trinkle 
-    | Maxwell Sivertsen 
-    | Fabian Götz 
-    | Lukas Erzfeld
+# Ok I reallly dont know why this does not work, 
+# author: | 
+#     | **Group 4** 
+#     | Denis Streitmatter 
+#     | Marie-Louise Korte 
+#     | Louis Trinkle 
+#     | Maxwell Sivertsen 
+#     | Fabian Götz 
+#     | Lukas Erzfeld
+author:  
+    # - **Group 4** 
+    - Denis Streitmatter 
+    - Marie-Louise Korte 
+    - Louis Trinkle 
+    - Maxwell Sivertsen 
+    - Fabian Götz 
+    - Lukas Erzfeld
 date: last-modified
 format:
     pdf:
         documentclass: scrreport
         theme: united
-        toc: true
+        toc: false
         toc-depth: 2
         number-sections: false 
         number-depth: 1
@@ -25,7 +34,7 @@ format:
 header-includes:  
 - \usepackage{graphicx}
 - \usepackage{lscape}
-- \usepackage{array}
+- \usepackage{array} 
 ---
 
 ```{r setup, include=FALSE}
@@ -40,9 +49,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The purpose of this document is the comparison of terrestial laser/LiDAR scanning and Sentinel 2 (satellite) data of the same spot.
 
-**Insert some description and the data of the plot. I wasn't there, so probably someone else should do it**
 
-## Algorithm idea
+**Study conditions:**
+
+- Sunny weather with a few clouds, ~ 23°
+- Location in the Leipzig Auwald, near the canopy crane (exact location can be seen in the figures)
+- Tools: terrestrial laser scanning (TLS), QGIS, Cloud Compare, R
+
+**Methodology**:
+
+1. TLS measurement was carried out at breast height
+2. Preprocessing of the TLS data via CloudCompare^[See [https://www.cloudcompare.org/](https://www.cloudcompare.org/)]
+3. QGIS was used for visualizing the sentinel data and creating the area of interest
+4. `R` was used to resample the TLS data to match the resolution of the Sentinel data
+5. `R` was also used to calculate the residuals and generally producing all figures in this document (importing the results of step 2, 3 and 4)
+
 
 ## Results
 
@@ -52,11 +73,51 @@ This section lists, describes and tries to explain the plots and graphs generate
 
 In this section the general measurements are compared. 
 
-*First the general heigths:*
 
-![Height calculation of TLS (resampled to resolution of the sentinel data)](TLS_plots/figures/chm_height.png)
+The TLS height measurement is shown in @fig-tls-heights. It can be seen in the left plot that the TLS data is potentially far more fine grained than the data of the Senitnel2 satellite (see @fig-sentinel-height). 
+For proper comparison the TLS got resampled to match the resolution of the sentiel data (see @fig-tls-heights)
+The difference in granularity can also been seen in the comparison of distribution of height and the standard derivations (see @fig-comparison-histograms): 
+While the height of TLS data is distributed evenly about the the whole height spectrum, the sentinel 2 data maps the whole area to a span of around 30 meters. 
+This can also be seen in @fig-sentinel-height, which uses the same colormap as @fig-tls-heights, but is very uniformly distributed.
 
 
-### Residual computation
 
-In this section we compute the residuals of the 
+
+
+![Height calculation of TLS (left raw, right resampled to resolution of the sentinel data)](TLS_plots/figures/chm_tls_height_both_res.png){#fig-tls-heights}
+
+![Height of the Sentinel 2 data](TLS_plots/figures/sentinel_height.png){#fig-sentinel-height}
+
+![Height distribution and standard derivation of both Sentinel and TLS data as histograms](TLS_plots/figures/histograms.png){#fig-comparison-histograms}
+
+The reason for this is simple and twofold:
+
+1. **Resolution of satellite data**: The sheer distance of the satellite results in far lower resolution, resulting in "spacial aggregation", mapping a calculated value to a far larger area than the TLS data. 
+2. **Way of measurement**: While the TLS scans from below and can therefor see the lower trees, Sentinel 2 measures from (very far) above, occluding the lower trees. This results in an overestimation of tree heights.
+But vice versa, the TLS data probably underestimates the canopy height, since lower trees can occlude the actual canopy.
+
+{{< pagebreak >}}
+
+### Comparison via residuals
+
+We computed the residuals by using the far more fine grained TLS data as truth and subtract the sentiel data from it. The result can be see in @fig-residuals-stats. 
+But there are a few things to consider:
+1. As briefly explained in the prevoius section, lower branches can occlude the actual canopy, resulting in an underestiation of the canopy height
+2. Also the further away from the device a tree is, the more likely it is to be (partly) occluded by closer objects.
+
+As expected, the Sentinel 2 data generally overestimates the canopy height, with a far larger part having negative residuals (colored red in @fig-residuals-stats). 
+Interestingly a small section in the map (bottom right, the area with the highest trees according to TLS data) 
+
+
+![Residuals of the comparison. The far more precise TLS data serves here as the truth. Left is a map of residuals, right is a histogram of the distribution](TLS_plots/figures/residuals_stats.png){#fig-residuals-stats}
+
+## Conclusion
+
+In conclusion, it is shown that TLS and satellite data differ greatly in terms of granularity and variance, which is to no surprise. 
+Of course, the big advantage of using satellites, covering waste amout of area, is looked over in this approach to make it compareable to the TLS by selecting only such a small area.
+Furthermore, it is not entirely clear how good the values from the TLS actually are. 
+We used it as ground truth for calculating the residuals from the Sentinel data, but there are actually a few problems with this method, as explained before. 
+An interesting approach would be comparing TLS data to UAV data, which could show the possible underestimation of the TLS.
+
+So all in all, satellites are well suited for measuring vast areas, but lack the necessary precision to be used in pprecise, local measurements.
+On the other hand, TLS also has some systematic problems, which may be overcome by certain methods (multiple scanning from different locations and merge of the results, scanning at a higher level etc.).  
