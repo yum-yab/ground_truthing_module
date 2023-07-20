@@ -1,5 +1,5 @@
 ---
-title: "Comparison of canopy height mesurment between TLS and Sentinel2 data"
+title: "Comparison of canopy height measurement between TLS and Sentinel2 data"
 subtitle: "Documentation"
 subsubtitle: "Leaf traits measurements"
 # Ok I reallly dont know why this does not work, 
@@ -62,7 +62,7 @@ The purpose of this document is the comparison of terrestial laser/LiDAR scannin
 2. Preprocessing of the TLS data via CloudCompare^[See [https://www.cloudcompare.org/](https://www.cloudcompare.org/)]
 3. QGIS was used for visualizing the sentinel data and creating the area of interest
 4. `R` was used to resample the TLS data to match the resolution of the Sentinel data
-5. `R` was also used to calculate the residuals and generally producing all figures in this document (importing the results of step 2, 3 and 4)
+5. `R` was also used to calculate the residuals and generally producing all figures in this document (importing the results of step 2, 3 and 4)^[The code for everything can be found here [https://github.com/yum-yab/ground_truthing_module/blob/main/submission_4/TLS_plots/TLS_plots.R](https://github.com/yum-yab/ground_truthing_module/blob/main/submission_4/TLS_plots/TLS_plots.R)]
 
 
 ## Results

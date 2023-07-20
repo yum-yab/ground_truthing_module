@@ -14,7 +14,7 @@ format:
     pdf:
         documentclass: scrreport
         theme: united
-        toc: true
+        toc: false
         toc-depth: 2
         number-sections: true
         number-depth: 1
@@ -47,7 +47,7 @@ Material used:
 
 ## Top canopy height per Sentinel-pixel
 
-As the figures in Figure 1.1 - 1.3 show, the UAV estimates differ significantly from those of the S2 data. UAV peak height per pixel shows a scale with a maximum of 35 and a minimum of 0. In comparison, S2 peak height per pixel shows only a maximum of 33 and a minimum of 26. Thus, the range of UAV values is much larger. This suggests a much finer spatial resolution leading to the differences. This confirms what we have already learned, that UAV is able to record at a finer spatial resolution than satellites are able to, due to their distance. Thus, we assume that UAV are closer to ground truth than Sentinel-2. While the histograms show the general distribution of the data, the maps allow us to see the distributions based on the coordinates. In the map of the residuals it can be seen in another way that the measured values of the two measurement methods are different. Specifically, one can see that Sentinel-2 does not resolve accurately enough to detect locations with low tree heights. Thus, the values of Sentinel-2 are too high on average. 
+As the figures in Figure 1.1 - 1.3 show, the UAV estimates differ significantly from those of the S2 data. UAV peak height per pixel shows a scale with a maximum of 35 and a minimum of 0. In comparison, S2 peak height per pixel shows only a maximum of 33 and a minimum of 26. Thus, the range of UAV values is much larger. This suggests a much finer spatial resolution leading to the differences. This confirms what we have already learned, that UAV is able to record at a finer spatial resolution than satellites are able to, due to their distance. Thus, we assume that UAV are closer to ground truth than Sentinel-2. While the histograms show the general distribution of the data, the maps allow us to see the distributions based on the coordinates. In the map of the residuals it can be seen in another way that the measured values of the two measurement methods are different. Specifically, one can see that Sentinel-2 does not resolve accurately enough to detect locations with low tree heights. Thus, the values of Sentinel-2 are too high on average.^[The source code for all plots can be found at [https://github.com/yum-yab/ground_truthing_module/blob/main/submission_3/uav_s2_height_comparison.r](https://github.com/yum-yab/ground_truthing_module/blob/main/submission_3/uav_s2_height_comparison.r)] 
 
 ### Plot images
 
