@@ -1,7 +1,14 @@
 ---
 title: "UAV vs Sentinel-2 height comparisons"
 subtitle: "Documentation"
-author: "Fabian Götz"
+author:  
+    # - **Group 4** 
+    - Denis Streitmatter 
+    - Marie-Louise Korte 
+    - Louis Trinkle 
+    - Maxwell Sivertsen 
+    - Fabian Götz 
+    - Lukas Erzfeld
 date: 6/24/23
 format:
     pdf:
