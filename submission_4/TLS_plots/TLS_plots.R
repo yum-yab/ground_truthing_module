@@ -10,20 +10,19 @@ library(forestr)
 library(lidR)
 library(rayshader)
 library(RCSF)
-library(rayshader)
 library(rgdal)
 library(sf)
 library(ggplot2)
 library(tidyverse)
 
-setwd("/home/denis/workspace/uni/ground_truthing/submission_4/TLS_plots")
+setwd("D:/Master/2_sem/ground_trouthing/ground_truthing_module/submission_4/TLS_plots")
 # setwd(getSrcDirectory(function(){})[1])
 
 ### colorbar 
 col <- height.colors(25)
 
 ### setting an extent to tls raster
-aoi <- shapefile("shapefile/polygon.shp")
+aoi <- shapefile("shapefile/polygon_small.shp")
 aoi
 
 ### TLS canopy height model
